@@ -29,8 +29,8 @@ function showNewStep(index) {
       }
 
       if (i === 2) {
-        leftPhoto.src = "/assets/images/bg-girl-step3-left.png";
-        rightPhoto.src = "/assets/images/bg-girl-step3-right.png";
+        leftPhoto.src = "./assets/images/bg-girl-step3-left.png";
+        rightPhoto.src = "./assets/images/bg-girl-step3-right.png";
         rightPhoto.classList.add("visually-hidden-md");
       } else {
         rightPhoto.classList.remove("visually-hidden-md");
