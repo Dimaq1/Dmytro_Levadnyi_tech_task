@@ -1,0 +1,210 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.swiper {
+  max-width: 460px;
+  max-height: 524px;
+
+  @include lg-md {
+    max-width: 350px;
+    max-height: 470px;
+  }
+  @include md-sm {
+    max-width: 300px;
+    max-height: 400px;
+  }
+  @include sm {
+    max-width: 225px;
+    max-height: 278px;
+  }
+
+  &-wrapper {
+    height: 100%;
+  }
+
+  &-slide {
+    border-radius: $gap-xl;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur($gap-sm);
+    padding: $gap-lg 0;
+    height: 524px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $gap-lg;
+
+    @include sm {
+      gap: $gap-md;
+      padding: $gap-md 0;
+    }
+
+    &__image {
+      object-fit: cover;
+      object-position: top center;
+      width: 321px;
+      height: 374px;
+      border-radius: $gap;
+      box-shadow: 8px 8px $gap 0px rgba(0, 0, 0, 0.16);
+
+      @include lg-md {
+        width: 250px;
+        height: 303px;
+      }
+      @include md-sm {
+        max-width: 200px;
+        max-height: 253px;
+      }
+      @include sm {
+        max-width: 171px;
+        max-height: 199px;
+      }
+    }
+
+    &__title {
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-size: $font-size;
+
+      @include lg-md {
+        font-size: 26px;
+      }
+
+      @include md-sm {
+        font-size: 24px;
+      }
+
+      @include sm {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-button {
+    position: relative;
+
+    @include ux {
+      @include visually-hidden;
+    }
+
+    &-prev {
+      @include sm {
+        margin-left: -$gap-sm;
+      }
+    }
+    &-next {
+      @include sm {
+        margin-right: -$gap-sm;
+      }
+    }
+
+    &__elipse {
+      background: $color-gradient-bg;
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+      max-width: 92px;
+      position: absolute;
+
+      @include lg-md {
+        max-width: 80px;
+      }
+
+      @include md-sm {
+        max-width: 60px;
+      }
+
+      @include sm {
+        max-width: 45px;
+      }
+
+      &.left {
+        left: 0;
+      }
+      &.right {
+        right: 0;
+      }
+    }
+
+    &__arrow {
+      height: 3px;
+      width: 100%;
+      max-width: 92px;
+      background: $color-white;
+      position: absolute;
+      display: flex;
+      align-items: center;
+
+      @include lg-md {
+        max-width: 80px;
+      }
+      @include md-sm {
+        max-width: 60px;
+      }
+      @include sm {
+        max-width: 34px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: $gap;
+        height: $gap;
+        border-style: solid;
+        border-color: $color-white;
+        transform: rotate(45deg);
+        position: absolute;
+
+        @include sm {
+          width: $gap-md;
+          height: $gap-md;
+        }
+      }
+
+      &.left {
+        right: 0;
+        &::after {
+          border-right: 3px;
+          border-top: 3px;
+          left: 0;
+        }
+      }
+      &.right {
+        left: 0;
+
+        &::after {
+          border-left: 3px;
+          border-bottom: 3px;
+          right: 0;
+        }
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+#swiper-button {
+  width: 138px;
+  height: 92px;
+
+  @include lg-md {
+    height: 80px;
+    width: 116px;
+  }
+
+  @include md-sm {
+    height: 60px;
+    width: 90px;
+  }
+  @include sm {
+    height: 45px;
+    width: 51px;
+  }
+}
+
+#swiper-slide {
+  display: flex;
+}

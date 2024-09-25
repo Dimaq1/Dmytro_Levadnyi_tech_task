@@ -1,0 +1,52 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.step-three {
+  &__title {
+    font-size: 120px;
+
+    @include xl-lg {
+      font-size: 100px;
+    }
+    @include lg-md {
+      font-size: 80px;
+    }
+    @include md-sm {
+      font-size: 60px;
+    }
+    @include sm {
+      font-size: 48px;
+    }
+    @include xx {
+      font-size: 48px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 785px;
+    margin-inline: auto;
+
+    @include lg-md {
+      font-size: 26px;
+    }
+    @include md-sm {
+      font-size: 22px;
+    }
+    @include sm {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    max-width: 463px;
+    width: 100%;
+    margin-inline: auto;
+
+    @include sm {
+      margin-top: auto;
+      max-width: 100%;
+    }
+  }
+}

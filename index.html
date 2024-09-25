@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdversterX</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="steps-container">
+      <button class="button-sound">
+        <img class="button-sound__img" src="/assets/images/sound.svg" alt="#" />
+        <span class="button-sound__muted"></span>
+      </button>
+      <img
+        class="bg-photo bg-photo__left"
+        src="/assets/images/bg-girl-step1-left.png"
+        alt="#"
+      />
+      <img
+        class="bg-photo bg-photo__right"
+        src="/assets/images/bg-girl-step1-right.png"
+        alt="#"
+      />
+
+      <div class="step step-one container active-step">
+        <p class="step-one__note">
+          Stop spending time on mediocre online stuff!
+        </p>
+        <h1 class="step__title step-one__title">
+          Explore our intriguing 3D game
+        </h1>
+        <p class="step-one__text">
+          instead and experience unparalleled pleasure like you've never seen
+          before.
+        </p>
+        <div class="step__buttons">
+          <button class="step__buttons-button step-one__button --refusing">
+            No,thanks
+          </button>
+          <button class="step__buttons-button step-one__button --continue">
+            Continue
+          </button>
+        </div>
+      </div>
+
+      <div class="step step-two container">
+        <h2 class="step__title step-two__title">
+          Who Would You Choose as Your First Partner, if you play right now?
+        </h2>
+
+        <div class="slider-container">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" id="swiper-slide">
+                <img
+                  class="swiper-slide__image"
+                  src="assets/images/slider-img-1.png"
+                  alt="#"
+                />
+                <h3 class="swiper-slide__title">Your Neighbor</h3>
+              </div>
+              <div class="swiper-slide" id="swiper-slide">
+                <img
+                  class="swiper-slide__image"
+                  src="assets/images/slider-img-2.png"
+                  alt="#"
+                />
+                <h3 class="swiper-slide__title">Famous Celebrity</h3>
+              </div>
+              <div class="swiper-slide" id="swiper-slide">
+                <img
+                  class="swiper-slide__image"
+                  src="assets/images/slider-img-3.png"
+                  alt="#"
+                />
+                <h3 class="swiper-slide__title">Your Neighbor</h3>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev swiper-button" id="swiper-button">
+            <div class="swiper-button__elipse left"></div>
+            <div class="swiper-button__arrow left"></div>
+          </div>
+          <div class="swiper-button-next swiper-button" id="swiper-button">
+            <div class="swiper-button__elipse right"></div>
+            <div class="swiper-button__arrow right"></div>
+          </div>
+        </div>
+
+        <button class="step__buttons-button step-two__button --continue">
+          Next
+        </button>
+      </div>
+
+      <div class="step step-three container">
+        <h2 class="step__title step-three__title">Warning</h2>
+        <p class="step-three__text">
+          You must be at least 18 years old and comfortable with mature topics
+          to play the game.
+        </p>
+        <a class="step__buttons-button step-three__button --continue" href="#"
+          >Ok, Continue</a
+        >
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

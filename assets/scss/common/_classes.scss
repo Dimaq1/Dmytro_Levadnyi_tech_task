@@ -1,0 +1,285 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.container {
+  width: min(100% - $gap, 1100px);
+  margin-inline: auto;
+}
+
+.steps-container {
+  width: 100%;
+  height: 100vh;
+  margin-inline: auto;
+  background-image: url("../images/bg-main.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: $color-white;
+  padding: $gap 0;
+
+  &.align-start {
+    align-items: flex-start;
+
+    @include lg {
+      align-items: center;
+    }
+  }
+}
+
+.bg-photo {
+  position: absolute;
+  bottom: 0;
+
+  &__left {
+    left: 0;
+    @include lg-md {
+      max-width: 450px;
+    }
+    @include md-sm {
+      max-width: 400px;
+    }
+    @include sm-xs {
+      max-width: 350px;
+    }
+    @include xs {
+      max-width: 300px;
+    }
+  }
+  &__right {
+    right: 0;
+
+    @include sm {
+      left: 50%;
+      transform: translateX(-70%);
+    }
+    @include lg-sm {
+      max-width: 550px;
+    }
+    @include sm-xs {
+      max-width: 400px;
+    }
+    @include xs {
+      max-width: 300px;
+    }
+  }
+}
+
+.button-sound {
+  background: $color-red;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  padding: $gap-md;
+  border: none;
+  border-radius: 50%;
+  max-width: 50px;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  @include sm-xs {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  @include xs {
+    max-width: $gap;
+    max-height: $gap;
+  }
+
+  &__img {
+    max-width: 28px;
+
+    @include sm-xs {
+      max-width: 23px;
+      max-height: 23px;
+    }
+    @include xs {
+      max-width: 18px;
+      max-height: 18px;
+    }
+  }
+
+  &__muted {
+    display: none;
+    height: 3px;
+    width: 70px;
+    background: $color-white;
+    position: absolute;
+    transform: rotate(-45deg);
+
+    @include sm-xs {
+      height: 2px;
+      width: 50px;
+    }
+    @include xs {
+      height: 2px;
+      width: $gap-xl;
+    }
+  }
+}
+
+.step {
+  display: none;
+  flex-direction: column;
+  gap: $gap-xl;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  @include lg-sm {
+    gap: $gap-lg;
+  }
+
+  @include sm {
+    gap: $gap-md;
+    height: 100%;
+  }
+
+  @include xx {
+    gap: $gap-sm;
+  }
+
+  &__title {
+    font-size: 84px;
+    line-height: 1.2;
+    -webkit-text-stroke: 1px $color-white;
+    background: $color-gradient-text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    text-shadow: 0px 4px $gap $color-shadow-text;
+
+    @include xl-lg {
+      font-size: 70px;
+    }
+    @include lg-md {
+      font-size: 55px;
+    }
+    @include md-sm {
+      font-size: 45px;
+    }
+    @include sm {
+      font-size: 35px;
+    }
+    @include xx {
+      font-size: 24px;
+      -webkit-text-stroke: 0.5px $color-white;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $gap-xl;
+    align-items: center;
+    justify-content: center;
+
+    @include md {
+      gap: $gap;
+    }
+    @include sm {
+      flex-direction: column-reverse;
+      margin-top: auto;
+      gap: $gap-sm;
+    }
+
+    &-button {
+      padding: $gap-md $gap-xl;
+      border-radius: $gap-sm;
+      text-transform: uppercase;
+      transition: 0.3s;
+      min-width: 323px;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+
+      @include lg {
+        font-size: 28px;
+        min-width: 300px;
+      }
+      @include md {
+        min-width: 200px;
+        min-height: 60px;
+      }
+
+      @include sm {
+        min-width: 0;
+        width: 100%;
+        font-size: 24px;
+        padding: 0;
+        min-height: 60px;
+      }
+
+      &.--refusing {
+        border: 2px solid $color-white;
+        background: transparent;
+
+        &:hover {
+          font-size: 24px;
+          box-shadow: 4px 4px $gap 0px $color-shadow-button;
+          background: rgba(55, 55, 55, 1);
+
+          @include lg-sm {
+            font-size: 22px;
+          }
+
+          @include sm {
+            font-size: 18px;
+          }
+        }
+      }
+
+      &.--continue {
+        background: $color-gradient-bg;
+        border: none;
+        box-shadow: 4px 4px $gap 0px $color-shadow-button;
+
+        &:hover {
+          font-size: 24px;
+          box-shadow: 8px 8px $gap-sm 0px rgba(0, 0, 0, 0.4) inset;
+
+          @include lg-sm {
+            font-size: 22px;
+          }
+
+          @include sm {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.active-step {
+  display: flex;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.visually-hidden-sm {
+  @include sm {
+    @include visually-hidden;
+  }
+}
+.visually-hidden-md {
+  @include md {
+    @include visually-hidden;
+  }
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+}

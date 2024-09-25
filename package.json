@@ -1,0 +1,29 @@
+{
+  "name": "tech-task-adverster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.2",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^7.0.6",
+    "gulp": "^5.0.0",
+    "gulp-csscomb": "^3.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "postcss": "^8.4.47",
+    "postcss-discard-comments": "^7.0.3",
+    "sass": "^1.79.3",
+    "sort-css-media-queries": "^2.4.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
