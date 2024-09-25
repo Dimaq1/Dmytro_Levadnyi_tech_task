@@ -2,12 +2,13 @@
 @use "../../mixins" as *;
 
 .step-two {
+  gap: $gap-lg;
   @include sm {
     justify-content: space-between;
   }
 
   &__title {
-    font-size: 64px;
+    font-size: 56px;
 
     @include ul-sm {
       padding: 0 60px;
@@ -19,7 +20,7 @@
       padding: 0 22px;
     }
     @include ul-xl {
-      font-size: 60px;
+      font-size: 52px;
     }
     @include xl-lg {
       font-size: 50px;

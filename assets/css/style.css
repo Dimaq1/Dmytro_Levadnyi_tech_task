@@ -442,8 +442,12 @@ h5 {
           backdrop-filter: blur(10px);
   margin-inline: auto;
 }
+
+.step-two {
+  gap: 30px;
+}
 .step-two__title {
-  font-size: 64px;
+  font-size: 56px;
 }
 .step-two__button {
   width: 100%;
@@ -604,7 +608,7 @@ h5 {
 }
 @media (max-width: 1379.8px) and (min-width: 1200px) {
   .step-two__title {
-    font-size: 60px;
+    font-size: 52px;
   }
 }
 @media (max-width: 1379.8px) and (min-width: 576px) {
